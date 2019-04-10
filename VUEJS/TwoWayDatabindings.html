@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js Bangla tutorial</title>
+</head>
+<body>
+
+<div id="root">
+	
+		<!--=== Vue Js Code-->
+
+	<p>Enter Your Name</p>
+	<input type="text" v-model="name">
+	<br>
+	<h1> Your Name Is {{name}} <h1>
+
+
+   <!--
+   	=== Core JavaScript==
+    <p>Enter Your Name</p>
+	<input type=text"  id="name" onkeyup="change()">
+	<br>
+	<h1 id="output"> Your Name Is <h1> -->
+
+	
+</div>
+
+
+
+<script type="text/javascript" src="Vue.js"></script>
+<script type="text/javascript">
+
+//===Vue Js Tow Way data Binding	
+
+  var app = new Vue({
+    el: "#root",
+    data: {
+    	name: "Ammy"
+    }, 
+    mounted : function(){
+    	console.log("mounted");
+
+    }
+  });
+
+
+ /* //Pure javascript
+
+  var data = {name: "Rimon"};
+  document.getElementById("name").value = data.name;
+  document.getElementById("output").innerHTML = "Your Name Is "+data.name;
+
+  function change(){
+
+  	data.name = document.getElementById("name").value ;
+  	document.getElementById("output").innerHTML = "Your Name Is "+data.name;
+
+  }*/
+
+
+
+</script>
+</body>
+</html>

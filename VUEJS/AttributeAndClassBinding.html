@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js Bangla tutorial</title>
+  <style type="text/css">
+    ul{
+      list-style: none;
+    }
+    li{
+      display:inline;
+    }
+    .active{
+      background: #73b225;
+      color: #FFFFFF;
+      padding: 5px;
+    }
+
+       
+      
+
+
+
+
+  </style>
+
+</head>
+<body>
+
+<div id="root">
+	
+		<!--=== Vue Js html  Code-->
+    <!-- == Vue js er mohde attribute bind korte syntex hlo " : "  or " v-bind: " -->
+
+	<ul>
+    <li>
+       <a :class="{'active':activeLink== 'link1'}" v-bind:href="link1.url" v-bind:title="link1.title">{{link1.text}}</a>
+    </li> 
+    
+     <li>
+       <a  :class="{'active':activeLink== 'link2'}" :href="link2.url" :title="link2.title">{{link2.text}}</a>
+    </li> 
+
+  </ul>
+
+  <br><br><br>
+
+  <p v-html="html">
+
+  </p>
+	
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="Vue.js"></script>
+<script type="text/javascript">
+
+//===Vue Js Attribute and class binding
+
+  var app = new Vue({
+    el: "#root",
+    data: {
+    	link1: {
+        text: "FaceBook", title:"Go To FaceBook", url:"http://facebook.com"
+      },
+
+      link2: {
+        text: "YouTube", title:"Go To YouTube", url:"http://youtube.com"
+      },
+      activeLink:"link1",
+      html:' <a href="http://rizoa_nunnasea.com"> Abount Us </a>'
+
+
+    } 
+    
+  });
+
+
+  
+
+</script>
+</body>
+</html>

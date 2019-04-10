@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js Bangla tutorial</title>
+  <style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+      }
+
+      body{
+        font:15px/1.3 'Open Sans', sans-serif;
+        color: #5e5b64;
+        text-align:center;
+      }
+
+      #contant{
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+      h1{
+             padding: 10px;
+             background-color:#e35885;
+      }
+      footer{
+         padding: 10px;
+             background-color:#e35885;
+      }
+
+      ul{
+        list-style-type: none;
+      }
+      #root{
+       height: 500px;
+      }
+      p{
+        padding: 3px;
+      }
+  </style>
+
+</head>
+<body>
+
+<div id="contant">
+
+<div id="root">
+	
+		<!--=== Vue Js html  Code-->
+    <!-- == Vue js e condition create korte hole "v-if or v-show " use korle hbe -->
+    <h1>Computed Filter</h1>
+     
+
+ <!--
+  === computed protery Html Code
+  <h3>That's my Name: {{upperCase}}</h3> 
+-->
+
+<h3>{{ name |  uper }}</h3>
+<h3> {{ profession |  lower }}</h3>
+<h3> {{ today | bdFormat}} </h3>
+
+
+
+
+
+   
+	
+</div>
+ <footer> <b><p> Prectice in VueJs </p></b></footer>
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+<!--<script type="text/javascript" src="Vue.js"></script>-->
+<script type="text/javascript">
+//=== global filter
+
+Vue.filter("lower",function(s){
+  return s.toLowerCase();
+})
+
+
+
+
+//===Vue Js Filter
+
+  var app = new Vue({
+    el: "#root",
+    data: {
+            name: "Rizoa Nunnasea",
+            profession :"Assistent Programmer",
+            today : new Date()
+
+         },
+
+      /*   computed:{
+          upperCase:function(){
+           return this.name.toUpperCase(); // akhne amre name property mhde ja likhbo te UpperCase hyseba Show korbe. but data model er mohde jode ro ekte property add kori tobe computed property mohde ro ekte funtion add korte hbe. but filter die kaj te kore khub easy way te amre multipal data properter jorn ekte filter funtion use korle e hbe.
+           
+          }
+         
+         },*/
+
+         filters: {
+          uper:function(s){
+             return s.toUpperCase();
+          },
+
+          bdFormat: function(d) {
+           
+            return d.getUTCDate() + "-" + (d.getUTCMonth()+1) + "-" + d.getUTCFullYear();
+         }
+        
+         }
+
+         
+  });
+
+
+  
+
+</script>
+</body>
+</html>
